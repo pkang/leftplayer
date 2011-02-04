@@ -12,4 +12,4 @@ if [ ! -d "$JAVA_HOME" ]; then
   exit 1
 fi
 
-"$LPS_HOME"/WEB-INF/lps/server/bin/lzc --runtime=swf8 --output ../leftplayer/leftplayer.swf leftplayer.lzx
+"$LPS_HOME"/WEB-INF/lps/server/bin/lzc --runtime=swf8 --output ../leftplayer.swf leftplayer.lzx
