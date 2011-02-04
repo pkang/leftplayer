@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>leftplayer example</title>
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+        <script type="text/javascript" src="leftplayer.js"> </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#intro_flash_video').leftplayer();
+            });
+        </script>
+    </head>
+    <body>
+        <a data-video-href="example-video.mp4" class="intro_video" id="intro_flash_video"/>
+    </body>
+</html>

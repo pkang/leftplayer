@@ -1,0 +1,25 @@
+<canvas>
+    <videoview stretches="both" width="100%" height="100%" type="http">
+        <handler name="oninit">
+            canvas.setAttribute("bgcolor", global.bgcolor);
+            canvas.setDefaultContextMenu(new lz.contextmenu())
+            this.setAttribute('url', global.url)
+            new LzDelegate(this, 'done', this.stream, 'onstop');
+            this.stream.setAttribute('autorewind', false);
+            this.stream.play();
+        </handler>
+        <method name="done" args="stream">
+            lz.Browser.loadJS('window.__video_done()');
+        </method>
+    </videoview>
+
+    <view width="100%" height="100%" clickable="${global.showHandCursor == 'true'}"
+          showhandcursor="${global.showHandCursor == 'true'}">
+        <handler name="onclick"><![CDATA[
+            if (global.clickURL && global.clickURL != 'null') {
+                lz.Browser.loadJS('window.location="' + global.clickURL + '"');
+            }
+            ]]>
+        </handler>
+    </view>
+</canvas>
