@@ -10,4 +10,6 @@ spec = Gem::Specification.new do |s|
   s.summary = ""
 
   s.files = `git ls-files`.split("\n")
+  s.executables        = %w(leftplayer)
+  s.default_executable = "leftplayer"
 end
