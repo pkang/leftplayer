@@ -1,7 +1,5 @@
 (function($) {
 
-  var PLAYER_URL = 'leftplayer.swf';
-
   var callback = null;
   window.__video_done = function() {
     callback && callback();
@@ -10,6 +8,7 @@
   $.fn.extend({
     leftplayer: function(overrideOptions) {
         var options = { 
+            playerUrl: 'leftplayer.swf',
             videoDoneCallback: null, 
             clickURL: null, 
             bgcolor: '#FFFFFF',
@@ -20,7 +19,9 @@
         var $self = $(this);
         var movie_url = $self.attr('data-video-href');
         var name = ($self.attr('id') || $self.attr('name')) + '_api';
-        var url = PLAYER_URL +'?url=' + movie_url;
+        var url = options.playerUrl +'?url=' + movie_url;
+
+        delete options.playerUrl;
         for (var key in options) {
              url += '&' + key + '=' + encodeURI(options[key]);
         }
