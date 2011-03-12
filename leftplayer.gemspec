@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
   s.name = "leftplayer"
-  s.version = "0.1"
+  s.version = "0.1.1"
   s.date = Time.now.strftime('%Y-%m-%d')
   s.authors = ["Pablo Kang"]
   s.email = ["pablokang@gmail.com"]
